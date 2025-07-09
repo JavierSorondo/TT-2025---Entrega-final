@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ágora Literaria</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0db90e8830.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1>Ágora Literaria</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="#buscar">BÚSQUEDA</a></li>
+                    <li><a href="#catalogo">CATÁLOGO</a></li>
+                    <li><a href="#recomendaciones">RECOMENDACIONES</a></li>
+                    <li><a href="#reseñas">RESEÑAS</a></li>
+                    <li><a href="#contacto">CONTACTO</a></li>
+                </ul>
+                <div id="downloadIconContainer" class="download-icon-wrapper">
+                    <a href="#" id="downloadIcon" class="download-icon" title="Ver descargas solicitadas">
+                        <i class="fa-solid fa-download fa-2x"> </i>
+                    </a>
+                    <span id= "downloadCount" class="download-count">0</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <div class="portada"></div>
+
+        <section id="buscar" class="buscador">
+            <h2>Encuentre su libro</h2>
+            <div class="search-form">
+                <div class="form-group">
+                    <label for="search-title">Título:</label>
+                    <input type="text" id="search-title" placeholder="Ej: Don Quijote de la Mancha">
+                </div>
+                <div class="form-group">
+                    <label for="search-author">Autor:</label>
+                    <input type="text" id="search-author" placeholder="Ej: Miguel de Cervantes">
+                </div>
+                 <div class="form-group">
+                    <label for="search-theme">Tema:</label>
+                    <input type="text" id="search-theme" placeholder="Ej: Aventura, Filosofía">
+                </div>
+                <button type="submit">Buscar</button>
+            </div>
+        </section>
+
+        <section id="catalogo" class="seccion">
+            <h3>Catálogo</h3>
+            <div class="book-grid" id="catalogo-libros">
+            
+            </div>
+        </section>
+
+
+        <section id="recomendaciones" class="seccion">
+            <h3>Nuestras recomendaciones:</h3>
+            <ul>
+                <li><a href="#">1. Don Quijote de la Mancha</a> - Miguel de Cervantes</li>
+                <li><a href="#">2. La Iliada</a> - Homero</li>
+                <li><a href="#">3. 1984</a> - George Orwell</li>
+                <li><a href="#">4. Mujercitas</a> - Louisa May Alcott</li>
+                <li><a href="#">5. Un Mundo Feliz</a> - Aldous Huxley</li>
+                <li><a href="#">6. La Odisea</a> - Homero</li>
+                <li><a href="#">7. Hamlet</a> - William Shakespeare</li>
+                <li><a href="#">8. Moby Dick</a> - Herman Melville</li>
+                <li><a href="#">9. Crimen y Castigo</a> - Fiódor Dostoievski</li>
+                <li><a href="#">10. Madame Bovary</a> - Gustave Flaubert</li>
+                </ul>
+        </section>
+
+         <section id="reseñas"class="seccion">
+            <h3>Reseñas</h3>
+            <div class="contenedor-reseñas">
+                <div class="cuadro-texto">
+                    <h4>Don Quijote de la Mancha</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore excepturi natus fugiat earum ex esse, perferendis repellat ipsum possimus expedita.</p>
+                </div>
+
+                <div class="cuadro-texto">
+                    <h4>Orgullo y Prejuicio</h4>
+                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse at ducimus vero delectus, temporibus et, ratione qui aliquam quis error reiciendis amet, accusamus velit commodi atque voluptates. Reiciendis, neque sit!</p>
+                </div>
+
+                <div class="cuadro-texto">
+                 <h4>1984</h4>
+                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio aut quia sed necessitatibus? Ex quia corporis temporibus sed voluptas commodi dolorem magni, impedit vel corrupti!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="seccion">
+            <h3>Contáctenos</h3>
+            <p>¿Tiene alguna pregunta o recomendación? No dude en contactarnos.</p>
+            <form>
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre"><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="mensaje">Mensaje:</label><br>
+                <textarea id="mensaje" name="mensaje" rows="5"></textarea><br><br>
+                <button type="submit">Enviar</button> 
+            </form>
+        </section>
+
+        </main> 
+  
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ágora Literaria. Todos los derechos reservados (para el diseño, los libros son de dominio público).</p>
+        </div>
+    </footer>
+
+    <div id="downloadModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Seleccionó los siguientes libros:</h2>
+            <ul id="selectedBooksList" class="selected-books-list">
+                <!-- La función agregarLibroSeleccionado poblará la lista con los libros seleccionados -->
+            </ul>
+            <button id="modalDownloadBtn" class="modal-download-button">Descargar ahora</button>
+        </div>
+    </div>
+
+    <script src="code.js"></script>
+
+
+</body>
+</html>
